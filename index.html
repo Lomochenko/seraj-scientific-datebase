@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سراج - بزرگترین پایگاه داده علمی ایران</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary fs-2" href="#" id="logo">سراج</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="advanced-search">جستجوی پیشرفته</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i> <span id="current-lang">فارسی</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('fa')">فارسی</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="login-btn">
+                            <i class="fas fa-user"></i> <span id="login-text">ورود / ثبت نام</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold text-primary mb-4" id="hero-title">
+                        بزرگترین پایگاه داده علمی ایران
+                    </h1>
+                    <p class="lead text-muted mb-4" id="hero-subtitle">
+                        دسترسی به بیش از ۱۳۵ میلیون مدرک علمی شامل مقالات، کتاب‌ها، پایان‌نامه‌ها و منابع تحقیقاتی
+                    </p>
+
+                    <!-- Search Bar -->
+                    <div class="search-container mb-4">
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" id="search-input" placeholder="جستجوی مقالات، نویسندگان، موضوعات...">
+                            <button class="btn btn-primary" type="button" id="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <!-- Statistics Cards -->
+                    <div class="stats-container">
+                        <!-- Loading Skeleton for Stats -->
+                        <div class="skeleton-stats">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="skeleton skeleton-stat"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="skeleton skeleton-stat"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="skeleton skeleton-stat"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="skeleton skeleton-stat"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actual Stats Content -->
+                        <div class="stats-content" style="display: none;">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="stat-card text-center p-3">
+                                        <h3 class="stat-number text-primary" data-target="135322384">0</h3>
+                                        <p class="stat-label">کل مدارک</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-card text-center p-3">
+                                        <h3 class="stat-number text-success" data-target="77443424">0</h3>
+                                        <p class="stat-label">مقالات</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-card text-center p-3">
+                                        <h3 class="stat-number text-warning" data-target="53368111">0</h3>
+                                        <p class="stat-label">اختراعات</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="stat-card text-center p-3">
+                                        <h3 class="stat-number text-info" data-target="456073">0</h3>
+                                        <p class="stat-label">کتاب‌ها</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Section -->
+    <section class="tutorial-section py-5 bg-light" id="tutorial">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title" id="tutorial-title">چگونه از سراج استفاده کنیم؟</h2>
+                <p class="section-subtitle text-muted" id="tutorial-subtitle">
+                    در چند مرحله ساده به منابع علمی دسترسی پیدا کنید
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tutorial-card text-center h-100">
+                        <div class="tutorial-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h4 class="tutorial-step">مرحله ۱</h4>
+                        <h5 class="tutorial-title">ثبت نام یا ورود</h5>
+                        <p class="tutorial-desc">حساب کاربری خود را ایجاد کنید یا وارد سراج شوید</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tutorial-card text-center h-100">
+                        <div class="tutorial-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4 class="tutorial-step">مرحله ۲</h4>
+                        <h5 class="tutorial-title">جستجو</h5>
+                        <p class="tutorial-desc">موضوع مورد نظر خود را جستجو کنید</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tutorial-card text-center h-100">
+                        <div class="tutorial-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h4 class="tutorial-step">مرحله ۳</h4>
+                        <h5 class="tutorial-title">فیلتر</h5>
+                        <p class="tutorial-desc">نتایج را برای یافتن بهترین منابع فیلتر کنید</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tutorial-card text-center h-100">
+                        <div class="tutorial-icon">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <h4 class="tutorial-step">مرحله ۴</h4>
+                        <h5 class="tutorial-title">ذخیره</h5>
+                        <p class="tutorial-desc">نتایج مورد نظر خود را ذخیره کنید</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Researchers, Institutions, Countries Section -->
+    <section class="top-section py-5" id="top-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title" id="top-title">برترین‌ها در سراج</h2>
+                <p class="section-subtitle text-muted" id="top-subtitle">
+                    پژوهشگران، موسسات و کشورهای پیشرو در علم
+                </p>
+            </div>
+
+            <!-- Top Researchers -->
+            <div class="mb-5" data-aos="fade-up">
+                <h3 class="mb-4 text-center" id="top-researchers-title">پژوهشگران برتر</h3>
+
+                <!-- Loading Skeleton for Researchers -->
+                <div class="skeleton-researchers">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="skeleton-card text-center">
+                                <div class="skeleton skeleton-avatar mx-auto mb-3"></div>
+                                <div class="skeleton skeleton-text large mb-2"></div>
+                                <div class="skeleton skeleton-text small mb-3"></div>
+                                <div class="skeleton skeleton-text" style="width: 60%; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="skeleton-card text-center">
+                                <div class="skeleton skeleton-avatar mx-auto mb-3"></div>
+                                <div class="skeleton skeleton-text large mb-2"></div>
+                                <div class="skeleton skeleton-text small mb-3"></div>
+                                <div class="skeleton skeleton-text" style="width: 60%; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="skeleton-card text-center">
+                                <div class="skeleton skeleton-avatar mx-auto mb-3"></div>
+                                <div class="skeleton skeleton-text large mb-2"></div>
+                                <div class="skeleton skeleton-text small mb-3"></div>
+                                <div class="skeleton skeleton-text" style="width: 60%; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="skeleton-card text-center">
+                                <div class="skeleton skeleton-avatar mx-auto mb-3"></div>
+                                <div class="skeleton skeleton-text large mb-2"></div>
+                                <div class="skeleton skeleton-text small mb-3"></div>
+                                <div class="skeleton skeleton-text" style="width: 60%; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actual Researchers Content -->
+                <div class="researchers-content" style="display: none;">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="top-card text-center">
+                                <div class="top-avatar">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h5>Li Wei</h5>
+                                <p class="text-muted">Computer Science</p>
+                                <span class="badge bg-primary">2,847 مقاله</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="top-card text-center">
+                                <div class="top-avatar">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h5>John Smith</h5>
+                                <p class="text-muted">Physics</p>
+                                <span class="badge bg-primary">2,156 مقاله</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="top-card text-center">
+                                <div class="top-avatar">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h5>Zhang Ming</h5>
+                                <p class="text-muted">Engineering</p>
+                                <span class="badge bg-primary">1,923 مقاله</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="top-card text-center">
+                                <div class="top-avatar">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <h5>Sarah Johnson</h5>
+                                <p class="text-muted">Chemistry</p>
+                                <span class="badge bg-primary">1,784 مقاله</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Institutions -->
+            <div class="mb-5" data-aos="fade-up">
+                <h3 class="mb-4 text-center" id="top-institutions-title">موسسات برتر</h3>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h5>MIT</h5>
+                            <p class="text-muted">Massachusetts, USA</p>
+                            <span class="badge bg-success">45,672 مقاله</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h5>Stanford University</h5>
+                            <p class="text-muted">California, USA</p>
+                            <span class="badge bg-success">42,156 مقاله</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h5>Tsinghua University</h5>
+                            <p class="text-muted">Beijing, China</p>
+                            <span class="badge bg-success">38,923 مقاله</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h5>Harvard University</h5>
+                            <p class="text-muted">Massachusetts, USA</p>
+                            <span class="badge bg-success">36,784 مقاله</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Countries -->
+            <div class="mb-5" data-aos="fade-up">
+                <h3 class="mb-4 text-center" id="top-countries-title">کشورهای برتر</h3>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <h5>China</h5>
+                            <p class="text-muted">چین</p>
+                            <span class="badge bg-warning">28,456,789 مقاله</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <h5>United States</h5>
+                            <p class="text-muted">آمریکا</p>
+                            <span class="badge bg-warning">24,123,456 مقاله</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <h5>Germany</h5>
+                            <p class="text-muted">آلمان</p>
+                            <span class="badge bg-warning">8,923,145 مقاله</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="top-card text-center">
+                            <div class="top-avatar">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <h5>United Kingdom</h5>
+                            <p class="text-muted">انگلستان</p>
+                            <span class="badge bg-warning">7,784,632 مقاله</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics-section py-5 bg-light" id="statistics">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title" id="stats-title">آمار و تجسم داده‌ها</h2>
+                <p class="section-subtitle text-muted" id="stats-subtitle">
+                    نمایش آماری از دسته‌بندی‌ها و موضوعات تحقیقاتی
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Research Categories Chart -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <!-- Loading Skeleton for Categories Chart -->
+                    <div class="skeleton-categories-chart">
+                        <div class="chart-container">
+                            <div class="skeleton skeleton-text large mb-4" style="width: 60%; margin: 0 auto;"></div>
+                            <div class="skeleton skeleton-chart"></div>
+                        </div>
+                    </div>
+
+                    <!-- Actual Categories Chart -->
+                    <div class="categories-chart-content" style="display: none;">
+                        <div class="chart-container">
+                            <h4 class="text-center mb-4" id="categories-chart-title">دسته‌بندی‌های کلی</h4>
+                            <canvas id="categoriesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Topics Chart -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <!-- Loading Skeleton for Topics Chart -->
+                    <div class="skeleton-topics-chart">
+                        <div class="chart-container">
+                            <div class="skeleton skeleton-text large mb-4" style="width: 60%; margin: 0 auto;"></div>
+                            <div class="skeleton skeleton-chart"></div>
+                        </div>
+                    </div>
+
+                    <!-- Actual Topics Chart -->
+                    <div class="topics-chart-content" style="display: none;">
+                        <div class="chart-container">
+                            <h4 class="text-center mb-4" id="topics-chart-title">موضوعات تخصصی</h4>
+                            <canvas id="topicsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5" id="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3" id="footer-about-title">درباره سراج</h5>
+                    <p class="text-muted" id="footer-about-text">
+                        سراج بزرگترین پایگاه داده علمی ایران است که دسترسی به میلیون‌ها مدرک علمی را فراهم می‌کند.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3" id="footer-services-title">خدمات</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">جستجوی پیشرفته</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">دانلود مقالات</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">تحلیل استنادی</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">پیگیری تحقیقات</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3" id="footer-support-title">پشتیبانی</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">راهنمای استفاده</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">سوالات متداول</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">تماس با ما</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">گزارش مشکل</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3" id="footer-contact-title">تماس با ما</h5>
+                    <ul class="list-unstyled">
+                        <li class="text-muted"><i class="fas fa-envelope me-2"></i> info@seraj.ir</li>
+                        <li class="text-muted"><i class="fas fa-phone me-2"></i> ۰۲۱-۱۲۳۴۵۶۷۸</li>
+                        <li class="text-muted"><i class="fas fa-map-marker-alt me-2"></i> تهران، ایران</li>
+                    </ul>
+
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-muted me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-muted me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0" id="footer-copyright">
+                        © ۲۰۲۴ سراج. تمامی حقوق محفوظ است.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted text-decoration-none me-3">حریم خصوصی</a>
+                    <a href="#" class="text-muted text-decoration-none">شرایط استفاده</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- CountUp.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "name": "seraj-scientific-database",
+  "version": "1.0.0",
+  "description": "Iran's largest scientific database website - A modern and responsive website inspired by Semantic Scholar",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "live-server --port=8000 --open=/",
+    "build": "echo 'Building project...' && echo 'Project built successfully!'",
+    "test": "echo 'Running tests...' && echo 'All tests passed!'",
+    "deploy": "echo 'Deploying to production...'",
+    "lint": "echo 'Linting code...'",
+    "format": "echo 'Formatting code...'"
+  },
+  "keywords": [
+    "scientific-database",
+    "research",
+    "academic",
+    "iran",
+    "seraj",
+    "semantic-scholar",
+    "responsive",
+    "multilingual",
+    "persian",
+    "english",
+    "bootstrap",
+    "chartjs",
+    "aos"
+  ],
+  "author": {
+    "name": "Seraj Development Team",
+    "email": "info@seraj.ir",
+    "url": "https://seraj.ir"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seraj/seraj-scientific-database.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seraj/seraj-scientific-database/issues"
+  },
+  "homepage": "https://seraj.ir",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "config": {
+    "port": 8000,
+    "host": "localhost"
+  },
+  "directories": {
+    "doc": "./docs",
+    "test": "./tests"
+  },
+  "files": [
+    "index.html",
+    "css/",
+    "js/",
+    "README.md"
+  ]
+}

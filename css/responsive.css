@@ -1,0 +1,404 @@
+/* Seraj Scientific Database - Responsive Styles */
+
+/* Large Devices (Desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .hero-section {
+        padding: 140px 0 100px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Medium Devices (Tablets, 768px and up) */
+@media (max-width: 991.98px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        padding: 100px 0 60px;
+        text-align: center;
+    }
+    
+    .hero-section .row {
+        flex-direction: column-reverse;
+    }
+    
+    .stats-container {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .tutorial-section,
+    .top-section,
+    .statistics-section {
+        padding: 60px 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.75rem !important;
+    }
+    
+    .search-container .form-control {
+        font-size: 1rem;
+        padding: 0.875rem 1.25rem;
+    }
+    
+    .search-container .btn {
+        padding: 0.875rem 1.5rem;
+    }
+}
+
+/* Small Devices (Landscape phones, 576px and up) */
+@media (max-width: 767.98px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-section {
+        padding: 80px 0 40px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .tutorial-card,
+    .top-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .tutorial-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .top-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .chart-container {
+        height: 300px;
+        padding: 1.5rem;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem !important;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .navbar-collapse {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .footer {
+        text-align: center;
+    }
+    
+    .footer .row > div {
+        margin-bottom: 2rem;
+    }
+    
+    .footer .text-md-end {
+        text-align: center !important;
+    }
+}
+
+/* Extra Small Devices (Portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section {
+        padding: 60px 0 30px;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .search-container .input-group {
+        flex-direction: column;
+    }
+    
+    .search-container .form-control {
+        border-radius: 25px;
+        margin-bottom: 1rem;
+    }
+    
+    .search-container .btn {
+        border-radius: 25px;
+        width: 100%;
+    }
+    
+    .stats-container .col-6 {
+        margin-bottom: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.25rem;
+    }
+    
+    .tutorial-card,
+    .top-card {
+        padding: 1.5rem;
+    }
+    
+    .tutorial-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .tutorial-title {
+        font-size: 1.1rem;
+    }
+    
+    .top-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .top-card h5 {
+        font-size: 1rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+        padding: 1rem;
+    }
+    
+    .chart-container h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem !important;
+    }
+    
+    .footer h5 {
+        font-size: 1.1rem;
+    }
+    
+    .footer .social-links a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        margin: 0 0.25rem;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 767.98px) and (orientation: landscape) {
+    .hero-section {
+        padding: 40px 0 20px;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .stats-container {
+        margin-top: 1.5rem;
+    }
+    
+    .tutorial-section,
+    .top-section,
+    .statistics-section {
+        padding: 40px 0;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-section::before {
+        background-size: 20px 20px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .footer,
+    .search-container,
+    .tutorial-section {
+        display: none !important;
+    }
+    
+    .hero-section {
+        padding: 20px 0;
+        background: white !important;
+    }
+    
+    .hero-section::before {
+        display: none;
+    }
+    
+    .section-title {
+        color: black !important;
+    }
+    
+    .top-card,
+    .stat-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .chart-container {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e5e7eb;
+        --border-color: #374151;
+        --light-color: #1f2937;
+    }
+    
+    body {
+        background-color: #111827;
+        color: var(--text-color);
+    }
+    
+    .navbar {
+        background-color: rgba(31, 41, 55, 0.95) !important;
+    }
+    
+    .hero-section {
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    }
+    
+    .tutorial-section,
+    .statistics-section {
+        background-color: #1f2937 !important;
+    }
+    
+    .tutorial-card,
+    .top-card,
+    .stat-card,
+    .chart-container {
+        background-color: #374151;
+        border-color: #4b5563;
+    }
+    
+    .search-container .form-control {
+        background-color: #374151;
+        border-color: #4b5563;
+        color: var(--text-color);
+    }
+    
+    .search-container .form-control::placeholder {
+        color: #9ca3af;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.btn:focus,
+.form-control:focus,
+.nav-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
