@@ -1,154 +1,107 @@
-# سراج - پایگاه داده علمی ایران
-## Seraj - Iran's Scientific Database
+# Seraj - Scientific Database Homepage
 
-یک وب‌سایت مدرن و ریسپانسیو برای نمایش پایگاه داده علمی با بیش از ۱۳۵ میلیون رکورد علمی.
+This project is the homepage for 'Seraj' website, designed to showcase a scientific database with over 135 million records.
 
-A modern and responsive website for displaying a scientific database with over 135 million scientific records.
+## About the Project
 
-## ویژگی‌ها / Features
+Seraj is a comprehensive scientific database that includes various types of academic resources:
+- Papers: 77,443,424 records
+- Books: 456,073 records
+- Theses: 311,099 records
+- And other scientific resources
 
-### 🎨 طراحی / Design
-- طراحی مدرن الهام‌گرفته از Semantic Scholar
-- کاملاً ریسپانسیو برای تمام دستگاه‌ها
-- پشتیبانی از دو زبان فارسی و انگلیسی
-- انیمیشن‌های روان و جذاب
-- پالت رنگی آکادمیک
+## Page Features
 
-### 📊 بخش‌های اصلی / Main Sections
-1. **بخش Hero** - جستجو، آمار و معرفی سایت
-2. **آموزش گام‌به‌گام** - راهنمای استفاده از سایت
-3. **برترین‌ها** - پژوهشگران، موسسات و کشورهای برتر
-4. **تجسم آماری** - نمودارهای تعاملی داده‌ها
-5. **پاورقی** - اطلاعات تماس و لینک‌های مفید
+### Design & Appearance
+- Inspired by top scientific database websites
+- Responsive and mobile-friendly
+- Bilingual (Persian/English)
+- Loading skeleton animations
+- Academic color scheme
 
-### 🛠 فناوری‌های استفاده شده / Technologies Used
-- **HTML5** - ساختار صفحه
-- **CSS3** - استایل‌دهی و انیمیشن‌ها
-- **JavaScript (ES6+)** - تعاملات و عملکردها
-- **Bootstrap 5** - فریمورک ریسپانسیو
-- **Chart.js** - نمودارهای تعاملی
-- **AOS** - انیمیشن‌های اسکرول
-- **Font Awesome** - آیکون‌ها
-- **CountUp.js** - انیمیشن شمارنده‌ها
+### Main Sections
+1. **Hero** - Search and overall statistics display
+2. **Tutorial** - Four steps guide for using the site
+3. **Top Lists** - Leading researchers, universities, and countries
+4. **Charts** - Statistical data visualization
+5. **Footer** - Links and contact information
 
-## ساختار پروژه / Project Structure
+### Technology
+I used pure HTML, CSS, and JavaScript along with:
+- Bootstrap 5 for responsive design
+- Chart.js for charts
+- AOS for animations
+- Font Awesome for icons
+
+## File Structure
 
 ```
 seraj-scientific-database/
-├── index.html              # فایل اصلی HTML
+├── index.html              # Main page
 ├── css/
-│   ├── style.css          # استایل‌های اصلی
-│   └── responsive.css     # استایل‌های ریسپانسیو
+│   ├── style.css          # Main styles
+│   └── responsive.css     # Mobile styles
 ├── js/
-│   ├── main.js           # جاوااسکریپت اصلی
-│   ├── charts.js         # نمودارها
-│   └── animations.js     # انیمیشن‌ها
-└── README.md             # مستندات پروژه
+│   ├── main.js           # Main site logic
+│   ├── charts.js         # Charts
+│   └── animations.js     # Animations
+└── README.md             # This file
 ```
 
-## نحوه اجرا / How to Run
+## How to Run
 
-### روش ۱: سرور محلی Python
+### With Python (easiest way)
 ```bash
-# در پوشه پروژه
 python -m http.server 8000
-
-# سپس در مرورگر باز کنید:
-# http://localhost:8000
 ```
+Then go to `http://localhost:8000`
 
-### روش ۲: Live Server (VS Code)
-1. افزونه Live Server را نصب کنید
-2. روی فایل `index.html` کلیک راست کنید
-3. "Open with Live Server" را انتخاب کنید
+OR
 
-### روش ۳: سرور محلی Node.js
+### With Live Server in your IDE
+
+
+### With Node.js
 ```bash
-# نصب http-server
 npm install -g http-server
-
-# اجرا
 http-server -p 8000
-
-# باز کردن در مرورگر:
-# http://localhost:8000
 ```
 
-## ویژگی‌های کلیدی / Key Features
+## Special Features
 
-### 🔍 جستجو / Search
-- نوار جستجوی پیشرفته
-- پیشنهادات جستجو (آماده برای پیاده‌سازی)
-- فیلترهای هوشمند
+### Search
+- Main search bar in hero section
+- Loading animation for search button
+- Toast notifications for results
 
-### 📱 ریسپانسیو / Responsive
-- طراحی Mobile-First
-- سازگار با تمام اندازه صفحه‌ها
-- تست شده روی دستگاه‌های مختلف
+### Animations
+- Skeleton loading that activates based on scroll position
+- Counter animations for statistics
+- Smooth transitions between sections
+- Hover effects on cards
 
-### 🌐 چندزبانه / Multilingual
-- پشتیبانی کامل از فارسی و انگلیسی
-- تغییر زبان بدون رفرش صفحه
-- فونت‌های مناسب برای هر زبان
+### Charts
+- Pie chart for general categories
+- Bar chart for specialized topics
+- Loading animations for charts
+- Responsive and interactive
 
-### 📊 نمودارهای تعاملی / Interactive Charts
-- نمودار دایره‌ای برای دسته‌بندی‌ها
-- نمودار میله‌ای برای موضوعات
-- انیمیشن‌های روان
-- قابلیت کلیک و تعامل
+### Multilingual
+- Language switching without page refresh
+- Text direction change (RTL/LTR)
+- Complete translation of all elements
 
-### ⚡ عملکرد / Performance
-- بارگذاری سریع
-- بهینه‌سازی تصاویر
-- کد فشرده و بهینه
-- پشتیبانی از مرورگرهای قدیمی
+## Browsers
 
-## سفارشی‌سازی / Customization
+Tested on:
+- Chrome (latest version)
+- Firefox
+- Safari
+- Edge
 
-### تغییر رنگ‌ها / Changing Colors
-در فایل `css/style.css` متغیرهای CSS را ویرایش کنید:
+## Important Notes
 
-```css
-:root {
-    --primary-color: #1e3a8a;    /* رنگ اصلی */
-    --secondary-color: #3b82f6;  /* رنگ ثانویه */
-    --accent-color: #f59e0b;     /* رنگ تأکید */
-    /* ... */
-}
-```
-
-### اضافه کردن زبان جدید / Adding New Language
-در فایل `js/main.js` به آبجکت `translations` زبان جدید اضافه کنید.
-
-### تغییر داده‌های نمودار / Changing Chart Data
-در فایل `js/charts.js` داده‌های `categoriesData` و `topicsData` را ویرایش کنید.
-
-## مرورگرهای پشتیبانی شده / Supported Browsers
-
-- ✅ Chrome 60+
-- ✅ Firefox 55+
-- ✅ Safari 12+
-- ✅ Edge 79+
-- ✅ Opera 47+
-
-## مجوز / License
-
-این پروژه تحت مجوز MIT منتشر شده است.
-
-## مشارکت / Contributing
-
-برای مشارکت در این پروژه:
-1. پروژه را Fork کنید
-2. شاخه جدید ایجاد کنید
-3. تغییرات خود را اعمال کنید
-4. Pull Request ارسال کنید
-
-## تماس / Contact
-
-برای سوالات و پیشنهادات:
-- ایمیل: info@seraj.ir
-- تلفن: ۰۲۱-۱۲۳۴۵۶۷۸
-
----
-
-**نکته:** این نسخه اولیه پروژه است و برای نمایش طراحی و عملکرد کلی ایجاد شده است. برای پیاده‌سازی کامل، نیاز به backend و پایگاه داده دارد.
+- This is only the homepage (frontend)
+- For complete implementation, it needs a backend
+- Data is currently static
+- Ready for integration with Django

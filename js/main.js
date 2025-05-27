@@ -156,22 +156,7 @@ function initializeSearch() {
     }
 }
 
-// Perform Search
-function performSearch() {
-    const searchInput = document.getElementById('search-input');
-    const query = searchInput.value.trim();
 
-    if (query) {
-        // Add loading state
-        searchInput.classList.add('loading');
-
-        // Simulate search (replace with actual search implementation)
-        setTimeout(() => {
-            searchInput.classList.remove('loading');
-            alert(`جستجو برای: ${query}`);
-        }, 1000);
-    }
-}
 
 // Show Search Suggestions
 function showSearchSuggestions(query) {
@@ -274,6 +259,161 @@ function updateLanguage(lang) {
     const currentLangElement = document.getElementById('current-lang');
     if (currentLangElement) {
         currentLangElement.textContent = translations[lang]['current-lang'];
+    }
+}
+
+// Initialize Loading Skeletons
+function initializeLoadingSkeletons() {
+    // Create intersection observer for skeleton sections
+    const skeletonObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const section = entry.target;
+                const sectionType = getSectionType(section);
+
+                if (sectionType) {
+                    // Start loading animation for this section
+                    startSectionLoading(sectionType);
+                    // Stop observing this section
+                    skeletonObserver.unobserve(section);
+                }
+            }
+        });
+    }, {
+        threshold: 0.2, // Trigger when 20% of section is visible
+        rootMargin: '50px 0px' // Start loading 50px before section comes into view
+    });
+
+    // Observe all sections with skeletons using data attributes
+    const sectionsToObserve = document.querySelectorAll('[data-skeleton-section]');
+
+    sectionsToObserve.forEach(section => {
+        if (section) {
+            skeletonObserver.observe(section);
+        }
+    });
+
+    // Show stats immediately since it's in hero section
+    setTimeout(() => {
+        showContent('stats');
+    }, 1500);
+}
+
+// Get section type from element
+function getSectionType(element) {
+    // Use data attribute for cleaner detection
+    const sectionType = element.getAttribute('data-skeleton-section');
+    if (sectionType) {
+        return sectionType;
+    }
+
+    // Fallback to old method
+    if (element.classList.contains('stats-container')) {
+        return 'stats';
+    }
+    if (element.querySelector('.skeleton-researchers')) {
+        return 'researchers';
+    }
+    if (element.querySelector('.skeleton-institutions')) {
+        return 'institutions';
+    }
+    if (element.querySelector('.skeleton-countries')) {
+        return 'countries';
+    }
+    if (element.id === 'statistics') {
+        return 'charts';
+    }
+
+    return null;
+}
+
+// Start loading animation for specific section
+function startSectionLoading(sectionType) {
+    const loadingDuration = 2000; // 2 seconds loading time
+
+    console.log(`🔄 Starting loading animation for: ${sectionType}`);
+
+    // Add visual indicator that loading has started
+    const skeletonElement = document.querySelector(`.skeleton-${sectionType}`);
+    if (skeletonElement) {
+        skeletonElement.classList.add('loading-active');
+    }
+
+    setTimeout(() => {
+        console.log(`✅ Showing content for: ${sectionType}`);
+        showContent(sectionType);
+    }, loadingDuration);
+}
+
+// Show Content and Hide Skeleton
+function showContent(section) {
+    const skeletonElement = document.querySelector(`.skeleton-${section}`);
+    const contentElement = document.querySelector(`.${section}-content`);
+
+    if (skeletonElement && contentElement) {
+        // Fade out skeleton
+        skeletonElement.style.transition = 'opacity 0.3s ease';
+        skeletonElement.style.opacity = '0';
+
+        setTimeout(() => {
+            skeletonElement.style.display = 'none';
+            contentElement.style.display = 'block';
+
+            // Fade in content
+            contentElement.style.opacity = '0';
+            contentElement.style.transition = 'opacity 0.5s ease';
+
+            setTimeout(() => {
+                contentElement.style.opacity = '1';
+
+                // Trigger animations for the newly shown content
+                if (section === 'stats') {
+                    initializeCounters();
+                }
+            }, 50);
+        }, 300);
+    }
+
+    // Special handling for charts
+    if (section === 'charts') {
+        const categoriesSkeletonElement = document.querySelector('.skeleton-categories-chart');
+        const categoriesContentElement = document.querySelector('.categories-chart-content');
+        const topicsSkeletonElement = document.querySelector('.skeleton-topics-chart');
+        const topicsContentElement = document.querySelector('.topics-chart-content');
+
+        // Show categories chart
+        if (categoriesSkeletonElement && categoriesContentElement) {
+            categoriesSkeletonElement.style.transition = 'opacity 0.3s ease';
+            categoriesSkeletonElement.style.opacity = '0';
+
+            setTimeout(() => {
+                categoriesSkeletonElement.style.display = 'none';
+                categoriesContentElement.style.display = 'block';
+                categoriesContentElement.style.opacity = '0';
+                categoriesContentElement.style.transition = 'opacity 0.5s ease';
+
+                setTimeout(() => {
+                    categoriesContentElement.style.opacity = '1';
+                }, 50);
+            }, 300);
+        }
+
+        // Show topics chart
+        if (topicsSkeletonElement && topicsContentElement) {
+            topicsSkeletonElement.style.transition = 'opacity 0.3s ease';
+            topicsSkeletonElement.style.opacity = '0';
+
+            setTimeout(() => {
+                topicsSkeletonElement.style.display = 'none';
+                topicsContentElement.style.display = 'block';
+                topicsContentElement.style.opacity = '0';
+                topicsContentElement.style.transition = 'opacity 0.5s ease';
+
+                setTimeout(() => {
+                    topicsContentElement.style.opacity = '1';
+                }, 50);
+            }, 300);
+        }
     }
 }
 
@@ -381,11 +521,43 @@ window.addEventListener('load', function() {
     console.log(`Page loaded in ${loadTime}ms`);
 });
 
+// Add loading indicator to search
+function addSearchLoading() {
+    const searchBtn = document.getElementById('search-btn');
+    if (searchBtn) {
+        const originalHTML = searchBtn.innerHTML;
+        searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        searchBtn.disabled = true;
+
+        setTimeout(() => {
+            searchBtn.innerHTML = originalHTML;
+            searchBtn.disabled = false;
+        }, 2000);
+    }
+}
+
+// Update perform search to include loading
+function performSearch() {
+    const searchInput = document.getElementById('search-input');
+    const query = searchInput.value.trim();
+
+    if (query) {
+        // Add loading state
+        addSearchLoading();
+
+        // Simulate search (replace with actual search implementation)
+        setTimeout(() => {
+            showToast(`جستجو برای: ${query}`, 'success');
+        }, 2000);
+    }
+}
+
 // Export functions for use in other files
 window.SerajApp = {
     changeLanguage,
     showToast,
     showLoading,
     hideLoading,
-    formatNumber
+    formatNumber,
+    showContent
 };
