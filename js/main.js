@@ -4,7 +4,6 @@
 const translations = {
     fa: {
         // Navigation
-        'advanced-search': 'جستجوی پیشرفته',
         'current-lang': 'فارسی',
         'login-text': 'ورود / ثبت نام',
 
@@ -40,7 +39,6 @@ const translations = {
     },
     en: {
         // Navigation
-        'advanced-search': 'Advanced Search',
         'current-lang': 'English',
         'login-text': 'Login / Register',
 
@@ -114,15 +112,20 @@ function initializeNavbar() {
         }
     });
 
-    // Mobile menu toggle
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+    // Login button functionality
+    const loginBtn = document.getElementById('login-btn');
 
-    if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', function() {
-            navbarCollapse.classList.toggle('show');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleLogin();
         });
     }
+}
+
+// Handle Login Action
+function handleLogin() {
+    showToast('صفحه ورود/ثبت نام در حال توسعه است', 'info');
 }
 
 // Initialize Search
@@ -161,13 +164,13 @@ function initializeSearch() {
 // Show Search Suggestions
 function showSearchSuggestions(query) {
     // Placeholder for search suggestions
-    console.log('Showing suggestions for:', query);
+    // TODO: Implement search suggestions
 }
 
 // Hide Search Suggestions
 function hideSearchSuggestions() {
     // Placeholder for hiding suggestions
-    console.log('Hiding suggestions');
+    // TODO: Implement hiding suggestions
 }
 
 // Initialize Counters
@@ -331,8 +334,6 @@ function getSectionType(element) {
 function startSectionLoading(sectionType) {
     const loadingDuration = 2000; // 2 seconds loading time
 
-    console.log(`🔄 Starting loading animation for: ${sectionType}`);
-
     // Add visual indicator that loading has started
     const skeletonElement = document.querySelector(`.skeleton-${sectionType}`);
     if (skeletonElement) {
@@ -340,7 +341,6 @@ function startSectionLoading(sectionType) {
     }
 
     setTimeout(() => {
-        console.log(`✅ Showing content for: ${sectionType}`);
         showContent(sectionType);
     }, loadingDuration);
 }
@@ -516,9 +516,10 @@ window.addEventListener('error', function(e) {
 
 // Performance Monitoring
 window.addEventListener('load', function() {
-    // Log page load time
+    // Monitor page load time for optimization
     const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-    console.log(`Page loaded in ${loadTime}ms`);
+    // Store load time for analytics if needed
+    window.pageLoadTime = loadTime;
 });
 
 // Add loading indicator to search

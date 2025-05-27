@@ -159,7 +159,7 @@ function createCharts() {
             }
         });
     }
-    
+
     // Create Topics Chart
     const topicsCtx = document.getElementById('topicsChart');
     if (topicsCtx) {
@@ -206,7 +206,7 @@ function createCharts() {
             }
         });
     }
-    
+
     // Animate charts on scroll
     observeCharts();
 }
@@ -214,7 +214,7 @@ function createCharts() {
 // Observe Charts for Animation
 function observeCharts() {
     const chartContainers = document.querySelectorAll('.chart-container');
-    
+
     const chartObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -228,7 +228,7 @@ function observeCharts() {
     }, {
         threshold: 0.3
     });
-    
+
     chartContainers.forEach(container => {
         chartObserver.observe(container);
     });
@@ -255,22 +255,22 @@ function formatChartNumber(value) {
 // Update Charts Language
 function updateChartsLanguage(lang) {
     const translations = chartTranslations[lang];
-    
+
     if (categoriesChart && translations.categories) {
         categoriesChart.data.labels = translations.categories.labels;
         categoriesChart.update();
-        
+
         // Update title
         const categoriesTitle = document.getElementById('categories-chart-title');
         if (categoriesTitle) {
             categoriesTitle.textContent = translations.categories.title;
         }
     }
-    
+
     if (topicsChart && translations.topics) {
         topicsChart.data.labels = translations.topics.labels;
         topicsChart.update();
-        
+
         // Update title
         const topicsTitle = document.getElementById('topics-chart-title');
         if (topicsTitle) {
@@ -305,7 +305,7 @@ function destroyCharts() {
 function exportChartData(chartType) {
     let data = null;
     let filename = '';
-    
+
     if (chartType === 'categories' && categoriesChart) {
         data = categoriesChart.data;
         filename = 'seraj-categories-data.json';
@@ -313,12 +313,12 @@ function exportChartData(chartType) {
         data = topicsChart.data;
         filename = 'seraj-topics-data.json';
     }
-    
+
     if (data) {
         const jsonData = JSON.stringify(data, null, 2);
         const blob = new Blob([jsonData], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
-        
+
         const a = document.createElement('a');
         a.href = url;
         a.download = filename;
@@ -338,13 +338,13 @@ function setupChartInteractions() {
                 const index = elements[0].index;
                 const label = categoriesChart.data.labels[index];
                 const value = categoriesChart.data.datasets[0].data[index];
-                
-                console.log(`Clicked on ${label}: ${formatChartNumber(value)} records`);
+
                 // Add navigation to category page here
+                // TODO: Navigate to category page
             }
         };
     }
-    
+
     // Topics chart click handler
     if (topicsChart) {
         topicsChart.options.onClick = function(event, elements) {
@@ -352,9 +352,9 @@ function setupChartInteractions() {
                 const index = elements[0].index;
                 const label = topicsChart.data.labels[index];
                 const value = topicsChart.data.datasets[0].data[index];
-                
-                console.log(`Clicked on ${label}: ${formatChartNumber(value)} records`);
+
                 // Add navigation to topic page here
+                // TODO: Navigate to topic page
             }
         };
     }
