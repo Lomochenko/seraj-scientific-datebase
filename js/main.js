@@ -466,6 +466,46 @@ function initializeScrollEffects() {
     });
 }
 
+// Stats Section Animation
+const initStatsAnimation = () => {
+    const statsSection = document.querySelector('.stats-section');
+    if (!statsSection) return;
+
+    const showStatsOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.8;
+        const statsSectionTop = statsSection.getBoundingClientRect().top;
+
+        if (statsSectionTop < triggerBottom) {
+            statsSection.classList.add('visible');
+            startCountingAnimation();
+            window.removeEventListener('scroll', showStatsOnScroll);
+        }
+    };
+
+    const startCountingAnimation = () => {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(number => {
+            const target = parseInt(number.getAttribute('data-target'));
+            const countUp = new CountUp(number, target, {
+                duration: 2.5,
+                separator: ',',
+                useGrouping: true
+            });
+            
+            if (!countUp.error) {
+                countUp.start();
+            }
+        });
+    };
+
+    window.addEventListener('scroll', showStatsOnScroll);
+};
+
+// Initialize stats animation when document is ready
+document.addEventListener('DOMContentLoaded', () => {
+    initStatsAnimation();
+});
+
 // Utility Functions
 
 // Debounce function
@@ -583,3 +623,15 @@ window.SerajApp = {
     formatNumber,
     showContent
 };
+
+// Parallax and Mouse Move Effects
+document.addEventListener('mousemove', function(e) {
+    const bg = document.querySelector('.hero-background');
+    if (!bg) return;
+    const x = e.clientX / window.innerWidth * 100;
+    const y = e.clientY / window.innerHeight * 100;
+    bg.style.background = `
+        radial-gradient(circle at ${x+20}% ${y+10}%, rgba(255,255,255,0.13) 0, transparent 60%),
+        radial-gradient(circle at ${x-30}% ${y+40}%, rgba(255,255,255,0.10) 0, transparent 70%)
+    `;
+});
