@@ -37,15 +37,15 @@ I used pure HTML, CSS, and JavaScript along with:
 
 ```
 seraj-scientific-database/
-├── index.html              # Main page
+├── index.html              
 ├── css/
-│   ├── style.css          # Main styles
-│   └── responsive.css     # Mobile styles
+│   ├── style.css          
+│   └── responsive.css     
 ├── js/
-│   ├── main.js           # Main site logic
-│   ├── charts.js         # Charts
-│   └── animations.js     # Animations
-└── README.md             # This file
+│   ├── main.js           
+│   ├── charts.js         
+│   └── animations.js     
+└── README.md             
 ```
 
 ## How to Run
