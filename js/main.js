@@ -11,6 +11,7 @@ const translations = {
         'hero-title': 'بزرگترین پایگاه داده علمی ایران',
         'hero-subtitle': 'دسترسی به بیش از ۱۳۵ میلیون مدرک علمی شامل مقالات، کتاب‌ها، پایان‌نامه‌ها و منابع تحقیقاتی',
         'search-placeholder': 'جستجوی مقالات، نویسندگان، موضوعات...',
+        'search-input-mobile': 'جستجو در سراج...',
 
         // Tutorial Section
         'tutorial-title': 'چگونه از سراج استفاده کنیم؟',
@@ -46,6 +47,7 @@ const translations = {
         'hero-title': 'Iran\'s Largest Scientific Database',
         'hero-subtitle': 'Access to over 135 million scientific documents including articles, books, theses and research resources',
         'search-placeholder': 'Search articles, authors, topics...',
+        'search-input-mobile': 'Search in Seraj...',
 
         // Tutorial Section
         'tutorial-title': 'How to Use Seraj?',
@@ -134,6 +136,12 @@ function initializeSearch() {
     const searchBtn = document.getElementById('search-btn');
 
     if (searchInput && searchBtn) {
+        // Set responsive placeholder
+        updateSearchPlaceholder();
+
+        // Update placeholder on window resize
+        window.addEventListener('resize', updateSearchPlaceholder);
+
         // Search button click
         searchBtn.addEventListener('click', function() {
             performSearch();
@@ -156,6 +164,19 @@ function initializeSearch() {
                 hideSearchSuggestions();
             }
         });
+    }
+}
+
+// Update Search Placeholder based on screen size
+function updateSearchPlaceholder() {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        const isMobile = window.innerWidth <= 767;
+        const placeholderKey = isMobile ? 'search-input-mobile' : 'search-placeholder';
+
+        if (translations[currentLanguage] && translations[currentLanguage][placeholderKey]) {
+            searchInput.placeholder = translations[currentLanguage][placeholderKey];
+        }
     }
 }
 

@@ -48,74 +48,54 @@
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
         <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="display-4 fw-bold text-primary mb-4" id="hero-title">
+            <div class="hero-content">
+                <!-- Main Content - Search First -->
+                <div class="hero-main text-center" data-aos="fade-up">
+                    <h1 class="hero-title fw-bold text-primary mb-3" id="hero-title">
                         بزرگترین پایگاه داده علمی ایران
                     </h1>
-                    <p class="lead text-muted mb-4" id="hero-subtitle">
+                    <p class="hero-subtitle text-muted mb-4" id="hero-subtitle">
                         دسترسی به بیش از ۱۳۵ میلیون مدرک علمی شامل مقالات، کتاب‌ها، پایان‌نامه‌ها و منابع تحقیقاتی
                     </p>
 
-                    <!-- Search Bar -->
-                    <div class="search-container mb-4">
-                        <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" id="search-input"
+                    <!-- Search Bar - Primary Focus -->
+                    <div class="search-container mb-5">
+                        <div class="search-wrapper">
+                            <input type="text" class="search-input" id="search-input"
                                 placeholder="جستجوی مقالات، نویسندگان، موضوعات...">
-                            <button class="btn btn-primary" type="button" id="search-btn">
+                            <button class="search-btn" type="button" id="search-btn">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6" data-aos="fade-left">
-                    <!-- Statistics Cards -->
+                <!-- Statistics Cards -->
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
                     <div class="stats-container" data-skeleton-section="stats">
                         <!-- Loading Skeleton for Stats -->
                         <div class="skeleton-stats">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <div class="skeleton skeleton-stat"></div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="skeleton skeleton-stat"></div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="skeleton skeleton-stat"></div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="skeleton skeleton-stat"></div>
-                                </div>
+                            <div class="stats-grid">
+                                <div class="skeleton skeleton-stat"></div>
+                                <div class="skeleton skeleton-stat"></div>
+                                <div class="skeleton skeleton-stat"></div>
                             </div>
                         </div>
 
                         <!-- Actual Stats Content -->
                         <div class="stats-content" style="display: none;">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <div class="stat-card text-center p-3">
-                                        <h3 class="stat-number text-primary" data-target="135322384">0</h3>
-                                        <p class="stat-label">کل مدارک</p>
-                                    </div>
+                            <div class="stats-grid">
+                                <div class="stat-card text-center">
+                                    <h3 class="stat-number text-primary" data-target="135322384">0</h3>
+                                    <p class="stat-label">کل مدارک</p>
                                 </div>
-                                <div class="col-6">
-                                    <div class="stat-card text-center p-3">
-                                        <h3 class="stat-number text-success" data-target="77443424">0</h3>
-                                        <p class="stat-label">مقالات</p>
-                                    </div>
+                                <div class="stat-card text-center">
+                                    <h3 class="stat-number text-success" data-target="77443424">0</h3>
+                                    <p class="stat-label">مقالات</p>
                                 </div>
-                                <div class="col-6">
-                                    <div class="stat-card text-center p-3">
-                                        <h3 class="stat-number text-warning" data-target="53368111">0</h3>
-                                        <p class="stat-label">اختراعات</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="stat-card text-center p-3">
-                                        <h3 class="stat-number text-info" data-target="456073">0</h3>
-                                        <p class="stat-label">کتاب‌ها</p>
-                                    </div>
+                                <div class="stat-card text-center">
+                                    <h3 class="stat-number text-warning" data-target="53368111">0</h3>
+                                    <p class="stat-label">اختراعات</p>
                                 </div>
                             </div>
                         </div>

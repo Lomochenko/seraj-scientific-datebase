@@ -179,9 +179,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    padding: 120px 0 80px;
+    padding: 120px 0 60px;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-section::before {
@@ -191,50 +195,117 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
-.hero-section .container {
+.hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Search Container */
+.hero-main {
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+/* Search Container - Primary Focus */
 .search-container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.search-wrapper {
     position: relative;
-}
-
-.search-container .form-control {
-    border: 2px solid var(--border-color);
-    border-radius: 50px;
-    padding: 1rem 1.5rem;
-    font-size: 1.1rem;
-    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 60px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    padding: 8px;
     transition: var(--transition);
 }
 
-.search-container .form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.25);
-}
-
-.search-container .btn {
-    border-radius: 50px;
-    padding: 1rem 2rem;
-    font-weight: 600;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.search-container .btn:hover {
+.search-wrapper:hover {
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+    background: transparent;
+    color: var(--text-color);
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+}
+
+.search-btn {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    padding: 1.25rem 2rem;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.search-btn:hover i {
+    font-size: 1.35rem;
+}
+
+.search-btn i {
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
 }
 
 /* Statistics Cards */
-.stats-container {
+.hero-stats {
     margin-top: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    /* max-width: 700px; */
+    margin: 0 auto;
 }
 
 .stat-card {
@@ -243,6 +314,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow);
     transition: var(--transition);
     border: 1px solid var(--border-color);
+    padding: 1.5rem;
 }
 
 .stat-card:hover {

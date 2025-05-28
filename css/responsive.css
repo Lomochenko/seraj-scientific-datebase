@@ -70,23 +70,52 @@
     }
 
     .hero-section {
-        padding: 80px 0 40px;
+        padding: 100px 0 40px;
+        min-height: 90vh;
     }
 
-    .hero-section h1 {
-        font-size: 2rem;
+    .hero-title {
+        font-size: 2.5rem !important;
+        line-height: 1.3;
     }
 
-    .hero-section .lead {
-        font-size: 1rem;
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .search-wrapper {
+        padding: 6px;
+    }
+
+    .search-input {
+        padding: 1rem 1.25rem !important;
+        font-size: 1rem !important;
+    }
+
+    .search-btn {
+        padding: 1rem 1.5rem !important;
+        min-width: 50px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem !important;
+        min-height: 120px;
     }
 
     .stat-number {
-        font-size: 1.5rem;
+        font-size: 2rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
     .stat-label {
-        font-size: 0.8rem;
+        font-size: 0.95rem !important;
+        font-weight: 500;
     }
 
     .tutorial-card,
@@ -165,26 +194,80 @@
     }
 
     .hero-section {
-        padding: 60px 0 30px;
+        padding: 120px 0 30px;
+        min-height: 100vh;
     }
 
-    .hero-section h1 {
-        font-size: 1.75rem;
+    .hero-title {
+        font-size: 2rem !important;
         line-height: 1.3;
+        margin-bottom: 1rem !important;
     }
 
-    .search-container .input-group {
-        flex-direction: column;
+    .hero-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .search-container .form-control {
-        border-radius: 25px;
-        margin-bottom: 1rem;
+    .hero-main {
+        margin-bottom: 2rem !important;
     }
 
-    .search-container .btn {
-        border-radius: 25px;
+    .search-container {
+        max-width: 100% !important;
+        padding: 0 1rem;
+    }
+
+    .search-wrapper {
+        flex-direction: row;
+        padding: 6px;
+        border-radius: 50px;
+        gap: 0;
+        align-items: center;
+    }
+
+    .search-input {
+        padding: 1rem 1.25rem !important;
+        font-size: 1rem !important;
+        text-align: right;
         width: 100%;
+        flex: 1;
+    }
+
+    .search-input::placeholder {
+        font-size: 0.9rem !important;
+        text-align: right;
+    }
+
+    .search-btn {
+        width: auto !important;
+        padding: 1rem 1.5rem !important;
+        border-radius: 50px !important;
+        justify-content: center;
+        min-width: 60px;
+        flex-shrink: 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        padding: 0 1rem;
+        max-width: 400px;
+    }
+
+    .stat-card {
+        padding: 1.5rem 1rem !important;
+        min-height: 100px;
+    }
+
+    .stat-number {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .stat-label {
+        font-size: 0.9rem !important;
+        font-weight: 500;
     }
 
     .stats-container .col-6 {
