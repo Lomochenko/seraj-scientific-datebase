@@ -6,24 +6,48 @@ const translations = {
         // Navigation
         'current-lang': 'فارسی',
         'login-text': 'ورود / ثبت نام',
-
+        
         // Hero Section
         'hero-title': 'بزرگترین پایگاه داده علمی ایران',
         'hero-subtitle': 'دسترسی به بیش از ۱۳۵ میلیون مدرک علمی شامل مقالات، کتاب‌ها، پایان‌نامه‌ها و منابع تحقیقاتی',
         'search-placeholder': 'جستجوی مقالات، نویسندگان، موضوعات...',
         'search-input-mobile': 'جستجو در سراج...',
-
+        
+        // Stats Section
+        'total-documents': 'کل مدارک',
+        'total-articles': 'مقالات',
+        'total-patents': 'اختراعات',
+        
         // Tutorial Section
         'tutorial-title': 'چگونه از سراج استفاده کنیم؟',
         'tutorial-subtitle': 'در چند مرحله ساده به منابع علمی دسترسی پیدا کنید',
+        'step-1': 'مرحله ۱',
+        'step-2': 'مرحله ۲',
+        'step-3': 'مرحله ۳',
+        'step-4': 'مرحله ۴',
+        'register-login': 'ثبت نام یا ورود',
+        'register-desc': 'حساب کاربری خود را ایجاد کنید یا وارد سراج شوید',
+        'search': 'جستجو',
+        'search-desc': 'موضوع مورد نظر خود را جستجو کنید',
+        'filter': 'فیلتر',
+        'filter-desc': 'نتایج را برای یافتن بهترین منابع فیلتر کنید',
+        'save': 'ذخیره',
+        'save-desc': 'نتایج مورد نظر خود را ذخیره کنید',
 
+        // Quick Filters
+        'articles': 'مقالات',
+        'researchers': 'پژوهشگران',
+        'universities': 'دانشگاه‌ها',
+        'access-text': 'دسترسی به بیش از ۱۳۵ میلیون مدرک علمی',
+        
         // Top Section
         'top-title': 'برترین‌ها در سراج',
         'top-subtitle': 'پژوهشگران، موسسات و کشورهای پیشرو در علم',
         'top-researchers-title': 'پژوهشگران برتر',
         'top-institutions-title': 'موسسات برتر',
         'top-countries-title': 'کشورهای برتر',
-
+        'papers-count': 'مقاله',
+        
         // Statistics Section
         'stats-title': 'آمار و تجسم داده‌ها',
         'stats-subtitle': 'نمایش آماری از دسته‌بندی‌ها و موضوعات تحقیقاتی',
@@ -36,30 +60,86 @@ const translations = {
         'footer-services-title': 'خدمات',
         'footer-support-title': 'پشتیبانی',
         'footer-contact-title': 'تماس با ما',
-        'footer-copyright': '© ۲۰۲۴ سراج. تمامی حقوق محفوظ است.'
+        'footer-copyright': '© ۲۰۲۴ سراج. تمامی حقوق محفوظ است.',
+        
+        // Footer Links
+        'advanced-search': 'جستجوی پیشرفته',
+        'download-articles': 'دانلود مقالات',
+        'citation-analysis': 'تحلیل استنادی',
+        'research-tracking': 'پیگیری تحقیقات',
+        'user-guide': 'راهنمای استفاده',
+        'faq': 'سوالات متداول',
+        'contact-us': 'تماس با ما',
+        'report-issue': 'گزارش مشکل',
+        'privacy': 'حریم خصوصی',
+
+        // Messages
+        'search-loading': 'در حال جستجو...',
+        'login-development': 'صفحه ورود/ثبت نام در حال توسعه است',
+        'search-for': 'جستجو برای:',
+        
+        // Logo
+        'logo': 'سراج',
+        
+        // Papers Count
+        'papers-count': 'مقاله',
+        
+        // Countries
+        'china': 'چین',
+        'usa': 'آمریکا',
+        'germany': 'آلمان',
+        'uk': 'انگلستان',
+        
+        // Contact Info
+        'phone': '۰۲۱-۱۲۳۴۵۶۷۸',
+        'address': 'تهران، ایران'
     },
     en: {
         // Navigation
         'current-lang': 'English',
         'login-text': 'Login / Register',
-
+        
         // Hero Section
         'hero-title': 'Iran\'s Largest Scientific Database',
         'hero-subtitle': 'Access to over 135 million scientific documents including articles, books, theses and research resources',
         'search-placeholder': 'Search articles, authors, topics...',
         'search-input-mobile': 'Search in Seraj...',
-
+        
+        // Stats Section
+        'total-documents': 'Total Documents',
+        'total-articles': 'Articles',
+        'total-patents': 'Patents',
+        
         // Tutorial Section
         'tutorial-title': 'How to Use Seraj?',
         'tutorial-subtitle': 'Access scientific resources in a few simple steps',
+        'step-1': 'Step 1',
+        'step-2': 'Step 2',
+        'step-3': 'Step 3',
+        'step-4': 'Step 4',
+        'register-login': 'Register or Login',
+        'register-desc': 'Create your account or login to Seraj',
+        'search': 'Search',
+        'search-desc': 'Search for your desired topic',
+        'filter': 'Filter',
+        'filter-desc': 'Filter results to find the best resources',
+        'save': 'Save',
+        'save-desc': 'Save your desired results',
 
+        // Quick Filters
+        'articles': 'Articles',
+        'researchers': 'Researchers',
+        'universities': 'Universities',
+        'access-text': 'Access to over 135 million scientific documents',
+        
         // Top Section
         'top-title': 'Top in Seraj',
         'top-subtitle': 'Leading researchers, institutions and countries in science',
         'top-researchers-title': 'Top Researchers',
         'top-institutions-title': 'Top Institutions',
         'top-countries-title': 'Top Countries',
-
+        'papers-count': 'papers',
+        
         // Statistics Section
         'stats-title': 'Statistics and Data Visualization',
         'stats-subtitle': 'Statistical display of research categories and topics',
@@ -72,7 +152,40 @@ const translations = {
         'footer-services-title': 'Services',
         'footer-support-title': 'Support',
         'footer-contact-title': 'Contact Us',
-        'footer-copyright': '© 2024 Seraj. All rights reserved.'
+        'footer-copyright': '© 2024 Seraj. All rights reserved.',
+        
+        // Footer Links
+        'advanced-search': 'Advanced Search',
+        'download-articles': 'Download Articles',
+        'citation-analysis': 'Citation Analysis',
+        'research-tracking': 'Research Tracking',
+        'user-guide': 'User Guide',
+        'faq': 'FAQ',
+        'contact-us': 'Contact Us',
+        'report-issue': 'Report Issue',
+        'privacy': 'Privacy Policy',
+        'terms': 'Terms of Use',
+
+        // Messages
+        'search-loading': 'Searching...',
+        'login-development': 'Login/Register page is under development',
+        'search-for': 'Search for:',
+        
+        // Logo
+        'logo': 'Seraj',
+        
+        // Papers Count
+        'papers-count': 'papers',
+        
+        // Countries
+        'china': 'China',
+        'usa': 'United States',
+        'germany': 'Germany',
+        'uk': 'United Kingdom',
+        
+        // Contact Info
+        'phone': '+98-21-12345678',
+        'address': 'Tehran, Iran'
     }
 };
 
@@ -266,10 +379,10 @@ function changeLanguage(lang) {
 
 // Update Language
 function updateLanguage(lang) {
-    const elements = document.querySelectorAll('[id]');
-
+    const elements = document.querySelectorAll('[data-translate]');
+    
     elements.forEach(element => {
-        const key = element.id;
+        const key = element.getAttribute('data-translate');
         if (translations[lang] && translations[lang][key]) {
             if (element.tagName === 'INPUT' && element.type === 'text') {
                 element.placeholder = translations[lang][key];
@@ -283,6 +396,24 @@ function updateLanguage(lang) {
     const currentLangElement = document.getElementById('current-lang');
     if (currentLangElement) {
         currentLangElement.textContent = translations[lang]['current-lang'];
+    }
+
+    // Update login text
+    const loginTextElement = document.getElementById('login-text');
+    if (loginTextElement) {
+        loginTextElement.textContent = translations[lang]['login-text'];
+    }
+
+    // Update search placeholder
+    updateSearchPlaceholder();
+
+    // Update document direction
+    document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+
+    // Update charts language if available
+    if (window.SerajCharts && typeof window.SerajCharts.updateChartsLanguage === 'function') {
+        window.SerajCharts.updateChartsLanguage(lang);
     }
 }
 
